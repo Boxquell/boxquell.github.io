@@ -10,6 +10,8 @@ RUN npm ci --no-audit --no-fund
 COPY . .
 ARG SITE_DOMAIN=boxquell.app
 ENV VITE_SITE_DOMAIN=$SITE_DOMAIN
+# This image is for the own server; the privacy policy then names that host instead of GitHub Pages.
+ENV VITE_SITE_HOST=hetzner
 # The catalogue pages come from src/data/catalogue.json, which is committed; `npm run catalogue` renews it.
 RUN npm run build
 

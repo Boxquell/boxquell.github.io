@@ -1,8 +1,8 @@
 // Everything that names the project, its owner or an address lives here.
-const domain: string = import.meta.env.VITE_SITE_DOMAIN ?? "boxquell.app";
+const domain: string = import.meta.env.VITE_SITE_DOMAIN ?? "boxquell.github.io";
 
 // Who delivers the site: "github" for GitHub Pages, "hetzner" for the own server. The privacy policy follows it.
-const host: string = import.meta.env.VITE_SITE_HOST ?? "hetzner";
+const host: string = import.meta.env.VITE_SITE_HOST ?? "github";
 
 export const SITE = {
   host,

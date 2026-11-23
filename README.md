@@ -12,7 +12,7 @@ npm run catalogue   # renews the catalogue data from the recipe repositories nex
 
 ## What is where
 
-- `src/site.ts`: the project's links, the install commands and the owner's address for the legal pages. The domain in canonical links, the sitemap and the privacy policy comes from `VITE_SITE_DOMAIN` (default `boxquell.app`).
+- `src/site.ts`: the project's links, the install commands and the owner's address for the legal pages. The domain in canonical links, the sitemap and the privacy policy comes from `VITE_SITE_DOMAIN` (default `boxquell.github.io`).
 - `src/routes.tsx`: every page with its title, description and structured data (JSON-LD). `src/pages`: the start page, the catalogue with a page per agent, language, tool and system, the questions and answers, and the legal pages (`/impressum`, `/datenschutz`, `/en/legal-notice`, `/en/privacy`).
 - `src/faq.ts`: the questions and answers; they also go out as `FAQPage` data and into `llms.txt`.
 - `src/data/catalogue.json` and `public/icons`: written by `scripts/catalogue.mjs` from the recipe repositories (`boxquell-agents`, `-languages`, `-tools`, `-os`). Committed, so a build needs nothing but this repository. Run `npm run catalogue` after recipes change.
@@ -21,7 +21,7 @@ npm run catalogue   # renews the catalogue data from the recipe repositories nex
 
 ## Publishing
 
-A push to `main` builds the site and publishes it on GitHub Pages at <https://boxquell.github.io> (`.github/workflows/pages.yml`). That build sets `VITE_SITE_HOST=github`, so the privacy policy names GitHub as the host; without it the policy describes the own server below.
+A push to `main` builds the site and publishes it on GitHub Pages at <https://boxquell.github.io> (`.github/workflows/pages.yml`). The privacy policy names GitHub as the host. The Docker image below is built with `VITE_SITE_HOST=hetzner` and a domain of its own, and its policy describes that server instead.
 
 ## Serving it yourself
 
