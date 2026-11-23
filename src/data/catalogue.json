@@ -996,7 +996,9 @@
     "plugins.gradle.org",
     "services.gradle.org",
     "downloads.gradle.org",
-    "plugins-artifacts.gradle.org"
+    "plugins-artifacts.gradle.org",
+    "github.com",
+    "release-assets.githubusercontent.com"
    ],
    "installAllow": [
     "@packages",
@@ -1524,7 +1526,7 @@
    "kind": "tool",
    "ide": false,
    "name": "Android SDK",
-   "description": "Android command-line tools, platform tools, a platform and build tools, for building apps with Gradle or Flutter; installing it accepts Google's SDK licences. No emulator.",
+   "description": "Android command-line tools, platform tools, a platform and build tools, for building apps with Gradle or Flutter (give the sandbox 8 GiB of memory for that); installing it accepts Google's SDK licences. No emulator.",
    "icon": "/icons/tools/android.svg",
    "color": "#34A853",
    "ink": "#ffffff",
