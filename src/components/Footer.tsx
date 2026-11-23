@@ -1,3 +1,4 @@
+import { Heart } from "lucide-react";
 import { SITE } from "../site";
 import { Link } from "./Link";
 
@@ -27,7 +28,12 @@ export function Footer() {
           <Link to="/en/privacy">Privacy policy</Link>
         </div>
       </div>
-      <div className="wrap footer-note muted">This site sets no cookies, counts no visits and loads nothing from other servers.</div>
+      <div className="wrap footer-note muted">
+        <span>
+          Made with <Heart size={14} className="heart" aria-label="love" /> in the EU
+        </span>
+        <span>This site sets no cookies, counts no visits and loads nothing from other servers.</span>
+      </div>
     </footer>
   );
 }
