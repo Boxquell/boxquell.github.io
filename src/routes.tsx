@@ -32,7 +32,7 @@ const software = {
   description: SITE.description,
   url: SITE.url,
   applicationCategory: "DeveloperApplication",
-  operatingSystem: "Linux, macOS, Windows",
+  operatingSystem: "Linux, macOS, Windows (WSL 2)",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   license: "https://github.com/Boxquell/boxquell#license",
   codeRepository: SITE.repo,

@@ -32,7 +32,7 @@ export function Install() {
       <div className="install-line">
         <code>
           <span className="prompt" aria-hidden="true">
-            {picked === "windows" ? ">" : "$"}
+            $
           </span>
           {entry.command}
         </code>

@@ -31,5 +31,6 @@ export const OWNER = {
 export const INSTALL = [
   { id: "unix", label: "Linux and macOS", command: "curl -fsSL https://github.com/Boxquell/boxquell/releases/latest/download/install.sh | sh" },
   { id: "brew", label: "Homebrew", command: "brew install boxquell/tap/boxquell" },
-  { id: "windows", label: "Windows", command: "irm https://github.com/Boxquell/boxquell/releases/latest/download/install.ps1 | iex" },
+  // On Windows Boxquell runs inside WSL 2, with the Linux install.
+  { id: "windows", label: "Windows (WSL 2)", command: "curl -fsSL https://github.com/Boxquell/boxquell/releases/latest/download/install.sh | sh" },
 ];

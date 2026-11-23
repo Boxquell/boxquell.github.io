@@ -20,7 +20,7 @@ export const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Which operating systems does Boxquell run on?",
-    a: "Boxquell is built and tested on Linux (x86_64 with KVM). Builds for macOS and Windows exist and are produced with every release, but nobody has run a sandbox on those systems yet, so treat them as untested. Inside a sandbox you choose between Debian, Ubuntu, Alpine, Arch Linux and AlmaLinux.",
+    a: "Boxquell is built and tested on Linux (x86_64 with KVM). A build for macOS is produced with every release, but nobody has run a sandbox there yet, so treat it as untested. On Windows, use Boxquell inside WSL 2 with the Linux install; the native Windows build cannot give a sandbox your project folder. Inside a sandbox you choose between Debian, Ubuntu, Alpine, Arch Linux and AlmaLinux.",
   },
   {
     q: "What do I need to run it?",
@@ -64,6 +64,6 @@ export const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Is Boxquell ready for daily work?",
-    a: "It is in early development. The core works and is tested on Linux, but expect rough edges and breaking changes. Known limits: the sandbox network is IPv4 only, UDP other than DNS is refused, and the QEMU backend cannot share folders yet.",
+    a: "It is in early development. The core works and is tested on Linux, but expect rough edges and breaking changes. Known limits: the sandbox network is IPv4 only, UDP other than DNS is refused, and with the QEMU backend only Debian sandboxes get the project folder.",
   },
 ];

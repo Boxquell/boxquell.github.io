@@ -25,7 +25,7 @@ export function llms(): string {
     "",
     `> ${SITE.description}`,
     "",
-    "Boxquell is a desktop app, web interface, command line and MCP server for running coding agents in microVMs (libkrun or QEMU). It is open source (MIT or Apache-2.0), needs no account and runs entirely on the user's computer. It is in early development and tested on Linux (x86_64, KVM); macOS and Windows builds exist but are untested.",
+    "Boxquell is a desktop app, web interface, command line and MCP server for running coding agents in microVMs (libkrun or QEMU). It is open source (MIT or Apache-2.0), needs no account and runs entirely on the user's computer. It is in early development and tested on Linux (x86_64, KVM); a macOS build exists but is untested; on Windows it is used inside WSL 2 with the Linux install.",
     "",
     "## Key facts",
     "",

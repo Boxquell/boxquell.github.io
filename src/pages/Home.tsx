@@ -205,7 +205,7 @@ export function Home() {
         <div className="cta">
           <h2>Try it on a project you care about</h2>
           <p>
-            Boxquell is in early development. It is built and tested on Linux (x86_64 with KVM); the macOS and Windows builds exist, but nobody has run a sandbox on them yet. Expect rough edges, and tell us about them.
+            Boxquell is in early development. It is built and tested on Linux (x86_64 with KVM); a macOS build exists, but nobody has run a sandbox on it yet, and on Windows it runs inside WSL 2. Expect rough edges, and tell us about them.
           </p>
           <div className="cta-actions">
             <a className="button primary large" href="/#install">
