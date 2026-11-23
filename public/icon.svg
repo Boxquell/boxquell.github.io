@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Boxquell">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b4f8f"/>
+      <stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="drop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9be3ff"/>
+      <stop offset="1" stop-color="#35a7f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- the spring: a drop rising out of the box -->
+  <path d="M256 84c40 52 64 88 64 122a64 64 0 0 1-128 0c0-34 24-70 64-122z" fill="url(#drop)"/>
+  <path d="M232 198c0 16 8 28 22 32" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="10" stroke-linecap="round"/>
+  <!-- the box: open at the top, seen from the front -->
+  <path d="M116 262l140 52 140-52v104a16 16 0 0 1-10 15l-124 49a16 16 0 0 1-12 0l-124-49a16 16 0 0 1-10-15z" fill="#ffffff"/>
+  <path d="M256 314v118" stroke="#0c2340" stroke-opacity=".28" stroke-width="10"/>
+  <path d="M116 262l-34 44 140 54 34-46zM396 262l34 44-140 54-34-46z" fill="#dbe9f8"/>
+</svg>
