@@ -21,13 +21,13 @@ const VISIBLE = 6;
 
 /** A network log that fills by itself, to show what the gateway does. */
 export function Gateway() {
-  const still = typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const [count, setCount] = useState(still ? ATTEMPTS.length : 3);
+  const [count, setCount] = useState(VISIBLE);
   useEffect(() => {
-    if (still) return;
+    // Without motion the log stands still, with every kind of entry in it.
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = setInterval(() => setCount((n) => n + 1), 1500);
     return () => clearInterval(timer);
-  }, [still]);
+  }, []);
   const rows = Array.from({ length: Math.min(count, VISIBLE) }, (_, i) => {
     const index = count - Math.min(count, VISIBLE) + i;
     return { index, attempt: ATTEMPTS[index % ATTEMPTS.length] };

@@ -10,6 +10,7 @@ RUN npm ci --no-audit --no-fund
 COPY . .
 ARG SITE_DOMAIN=boxquell.app
 ENV VITE_SITE_DOMAIN=$SITE_DOMAIN
+# The catalogue pages come from src/data/catalogue.json, which is committed; `npm run catalogue` renews it.
 RUN npm run build
 
 FROM caddy:2-alpine

@@ -1,12 +1,18 @@
 // Everything that names the project, its owner or an address lives here.
+const domain: string = import.meta.env.VITE_SITE_DOMAIN ?? "boxquell.app";
+
 export const SITE = {
   name: "Boxquell",
-  // The address the site is served from; shown in the legal pages.
-  domain: import.meta.env.VITE_SITE_DOMAIN ?? "boxquell.app",
+  // The address the site is served from: in the legal pages, canonical links and the sitemap.
+  domain,
+  url: `https://${domain}`,
   repo: "https://github.com/Boxquell/boxquell",
   wiki: "https://github.com/Boxquell/boxquell/wiki",
   releases: "https://github.com/Boxquell/boxquell/releases/latest",
   org: "https://github.com/Boxquell",
+  tagline: "A microVM for every coding agent",
+  description:
+    "Boxquell runs coding agents in microVMs on your own computer. The network is closed until you open it, every attempt is logged, and your API keys never enter the sandbox. Open source, no account, no cloud service.",
 };
 
 export const OWNER = {
@@ -23,12 +29,3 @@ export const INSTALL = [
   { id: "brew", label: "Homebrew", command: "brew install boxquell/tap/boxquell" },
   { id: "windows", label: "Windows", command: "irm https://github.com/Boxquell/boxquell/releases/latest/download/install.ps1 | iex" },
 ];
-
-export const CATALOGUE = {
-  agents: ["Claude Code", "Codex", "Gemini CLI", "opencode", "pi", "Aider", "goose", "Amp", "GitHub Copilot CLI", "Cursor CLI", "Qwen Code", "herdr", "Orca server"],
-  languages: ["Node.js", "Python", "Go", "Rust", "PHP", "Ruby", "Java", "Kotlin", "Lua", ".NET", "Deno", "Bun", "Elixir", "Zig"],
-  tools: ["Git", "GitHub CLI", "GitLab CLI", "Docker", "Playwright", "PostgreSQL", "MariaDB", "Redis", "kubectl", "Terraform", "AWS CLI", "Homebrew", "Jira CLI", "code-server"],
-  toolCount: 60,
-  systems: ["Debian", "Ubuntu", "Alpine", "Arch Linux", "AlmaLinux"],
-  systemCount: 10,
-};

@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 
-/** The path of the page, kept in step with the address bar. */
-export function usePath(): string {
-  const [path, setPath] = useState(() => normalise(location.pathname));
+export function normalise(path: string): string {
+  return path.length > 1 ? path.replace(/\/+$/, "") : "/";
+}
+
+/** The path of the page, kept in step with the address bar. On the server it is the path being rendered. */
+export function usePath(initial: string): string {
+  const [path, setPath] = useState(initial);
   useEffect(() => {
     const update = () => setPath(normalise(location.pathname));
     addEventListener("popstate", update);
     return () => removeEventListener("popstate", update);
   }, []);
   return path;
-}
-
-function normalise(path: string): string {
-  return path.length > 1 ? path.replace(/\/+$/, "") : "/";
 }
 
 /** Go to a page of this site without loading it anew. */

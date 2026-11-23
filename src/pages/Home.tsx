@@ -1,9 +1,13 @@
 import { ArrowRight, Boxes, Cpu, FileDiff, KeyRound, ScrollText, ShieldCheck } from "lucide-react";
 import { Gateway } from "../components/Gateway";
 import { Install } from "../components/Install";
-import { GitHubMark } from "../components/Link";
+import { GitHubMark, Link } from "../components/Link";
+import { Reveal } from "../components/Reveal";
+import { Rich } from "../components/Code";
+import { FAQ } from "../faq";
 import { Tour } from "../components/Tour";
-import { CATALOGUE, SITE } from "../site";
+import { SHELVES, SYSTEMS, recipePath, recipesOf, systemPath } from "../catalogue";
+import { SITE } from "../site";
 
 const FEATURES = [
   { icon: Cpu, title: "A real VM boundary", text: "Each sandbox is a microVM with its own kernel, not a container sharing yours. It sees your project folder and nothing else of your files." },
@@ -73,24 +77,26 @@ export function Home() {
       </section>
 
       <section id="features" className="wrap section">
-        <p className="eyebrow">Features</p>
-        <h2>Built so you can leave an agent alone</h2>
-        <div className="features">
-          {FEATURES.map((feature) => (
-            <div key={feature.title} className="feature">
-              <span className="feature-icon">
-                <feature.icon size={20} aria-hidden />
-              </span>
-              <h3>{feature.title}</h3>
-              <p>{feature.text}</p>
-            </div>
-          ))}
-        </div>
-        <ul className="extras">
-          {EXTRAS.map((extra) => (
-            <li key={extra}>{extra}</li>
-          ))}
-        </ul>
+        <Reveal>
+          <p className="eyebrow">Features</p>
+          <h2>Built so you can leave an agent alone</h2>
+          <div className="features stagger">
+            {FEATURES.map((feature) => (
+              <div key={feature.title} className="feature">
+                <span className="feature-icon">
+                  <feature.icon size={20} aria-hidden />
+                </span>
+                <h3>{feature.title}</h3>
+                <p>{feature.text}</p>
+              </div>
+            ))}
+          </div>
+          <ul className="extras">
+            {EXTRAS.map((extra) => (
+              <li key={extra}>{extra}</li>
+            ))}
+          </ul>
+        </Reveal>
       </section>
 
       <section className="wrap section split keys">
@@ -120,21 +126,29 @@ export function Home() {
       </section>
 
       <section id="tour" className="wrap section">
-        <p className="eyebrow">Tour</p>
-        <h2>A look around</h2>
-        <Tour />
+        <Reveal>
+          <p className="eyebrow">Tour</p>
+          <h2>A look around</h2>
+          <Tour />
+        </Reveal>
       </section>
 
       <section id="catalogue" className="wrap section">
-        <p className="eyebrow">Catalogue</p>
-        <h2>Installed with a click</h2>
-        <div className="catalogue">
-          <Shelf count={CATALOGUE.agents.length} label="agents" names={CATALOGUE.agents} />
-          <Shelf count={CATALOGUE.languages.length} label="languages" names={CATALOGUE.languages} />
-          <Shelf count={CATALOGUE.toolCount} label="tools" names={CATALOGUE.tools} more />
-          <Shelf count={CATALOGUE.systemCount} label="Linux systems" names={CATALOGUE.systems} />
-        </div>
-        <p className="muted small">The names belong to their owners; Boxquell installs their software from the official sources and is not affiliated with them.</p>
+        <Reveal>
+          <p className="eyebrow">Catalogue</p>
+          <h2>Installed with a click</h2>
+          <div className="catalogue">
+            {SHELVES.map((shelf) => (
+              <Shelf key={shelf.slug} shelf={shelf} />
+            ))}
+          </div>
+          <p>
+            <Link to="/catalogue" className="button ghost">
+              Browse the whole catalogue <ArrowRight size={15} aria-hidden />
+            </Link>
+          </p>
+          <p className="muted small">The names belong to their owners; Boxquell installs their software from the official sources and is not affiliated with them.</p>
+        </Reveal>
       </section>
 
       <section className="wrap section split">
@@ -165,6 +179,28 @@ export function Home() {
         </pre>
       </section>
 
+      <section className="wrap section faq">
+        <Reveal>
+          <p className="eyebrow">Questions</p>
+          <h2>Asked first</h2>
+          <div className="faq-list">
+            {FAQ.slice(0, 5).map(({ q, a }) => (
+              <details key={q}>
+                <summary>{q}</summary>
+                <p>
+                  <Rich text={a} />
+                </p>
+              </details>
+            ))}
+          </div>
+          <p>
+            <Link to="/faq" className="button ghost">
+              All questions and answers <ArrowRight size={15} aria-hidden />
+            </Link>
+          </p>
+        </Reveal>
+      </section>
+
       <section className="wrap section">
         <div className="cta">
           <h2>Try it on a project you care about</h2>
@@ -172,7 +208,7 @@ export function Home() {
             Boxquell is in early development. It is built and tested on Linux (x86_64 with KVM); the macOS and Windows builds exist, but nobody has run a sandbox on them yet. Expect rough edges, and tell us about them.
           </p>
           <div className="cta-actions">
-            <a className="button primary large" href="#install">
+            <a className="button primary large" href="/#install">
               Install Boxquell
             </a>
             <a className="button ghost large" href={SITE.repo}>
@@ -185,17 +221,25 @@ export function Home() {
   );
 }
 
-function Shelf({ count, label, names, more }: { count: number; label: string; names: string[]; more?: boolean }) {
+function Shelf({ shelf }: { shelf: (typeof SHELVES)[number] }) {
+  const all = shelf.kind === "system" ? SYSTEMS.map((system) => ({ path: systemPath(system), name: system.name })) : recipesOf(shelf.kind).map((recipe) => ({ path: recipePath(recipe), name: recipe.name }));
+  const shown = all.slice(0, 14);
   return (
     <div className="shelf">
       <p className="shelf-count">
-        <b>{count}</b> {label}
+        <b>{all.length}</b> {shelf.kind === "system" ? "Linux systems" : shelf.label.toLowerCase()}
       </p>
       <ul>
-        {names.map((name) => (
-          <li key={name}>{name}</li>
+        {shown.map((entry) => (
+          <li key={entry.path}>
+            <Link to={entry.path}>{entry.name}</Link>
+          </li>
         ))}
-        {more && <li className="more">and {count - names.length} more</li>}
+        {all.length > shown.length && (
+          <li className="more">
+            <Link to={`/catalogue/${shelf.slug}`}>and {all.length - shown.length} more</Link>
+          </li>
+        )}
       </ul>
     </div>
   );

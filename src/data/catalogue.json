@@ -1,0 +1,4425 @@
+{
+ "recipes": [
+  {
+   "id": "aider",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "Aider",
+   "description": "AI pair programming in the terminal (`aider`)",
+   "icon": "/icons/agents/aider.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "python"
+   ],
+   "allow": [
+    "api.anthropic.com",
+    "api.openai.com",
+    "openrouter.ai"
+   ],
+   "installAllow": [
+    "pypi.org",
+    "files.pythonhosted.org",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": "aider",
+   "removable": false,
+   "settings": [
+    {
+     "env": "AIDER_WEAK_MODEL",
+     "label": "Weak model",
+     "help": "The cheaper model used for commit messages and summaries."
+    },
+    {
+     "env": "AIDER_EDITOR_MODEL",
+     "label": "Editor model",
+     "help": "The model that applies edits in architect mode."
+    },
+    {
+     "env": "AIDER_AUTO_COMMITS",
+     "label": "Commit automatically",
+     "help": "Commit every change Aider makes."
+    },
+    {
+     "env": "AIDER_AUTO_TEST",
+     "label": "Run tests after edits",
+     "help": "Run the test command after each change and fix failures."
+    },
+    {
+     "env": "AIDER_DARK_MODE",
+     "label": "Dark terminal colors",
+     "help": "Use colors that suit a dark terminal."
+    },
+    {
+     "env": "AIDER_CHECK_UPDATE",
+     "label": "Check for updates",
+     "help": "Look for a newer Aider at startup."
+    },
+    {
+     "env": "AIDER_ANALYTICS_DISABLE",
+     "label": "No usage statistics",
+     "help": "Turn off anonymous analytics."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Anthropic API key",
+     "help": "An API key from the Anthropic Console.",
+     "hosts": []
+    },
+    {
+     "label": "OpenAI API key",
+     "help": "An API key from the OpenAI platform.",
+     "hosts": []
+    },
+    {
+     "label": "OpenRouter API key",
+     "help": "An API key from OpenRouter.",
+     "hosts": []
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "amp",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "Amp",
+   "description": "Sourcegraph's coding agent (`amp`)",
+   "icon": "/icons/agents/amp.svg",
+   "color": "#2C3A2A",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "ampcode.com"
+   ],
+   "installAllow": [],
+   "ports": [],
+   "command": "amp",
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "claude",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "Claude Code",
+   "description": "Anthropic's coding agent (`claude`)",
+   "icon": "/icons/agents/claude.svg",
+   "color": "#D97757",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "api.anthropic.com"
+   ],
+   "installAllow": [],
+   "ports": [],
+   "command": "claude",
+   "removable": false,
+   "settings": [
+    {
+     "env": "ANTHROPIC_MODEL",
+     "label": "Model",
+     "help": "The model Claude Code starts with."
+    },
+    {
+     "env": "DISABLE_TELEMETRY",
+     "label": "No usage statistics",
+     "help": "Do not send usage statistics to Anthropic."
+    },
+    {
+     "env": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+     "label": "Small model",
+     "help": "The model the haiku alias stands for, also used for background tasks."
+    },
+    {
+     "env": "ANTHROPIC_BASE_URL",
+     "label": "API endpoint",
+     "help": "Send requests through a proxy or gateway instead of Anthropic."
+    },
+    {
+     "env": "CLAUDE_CODE_MAX_OUTPUT_TOKENS",
+     "label": "Max output tokens",
+     "help": "The most tokens a single reply may have."
+    },
+    {
+     "env": "MAX_THINKING_TOKENS",
+     "label": "Thinking budget",
+     "help": "Tokens the model may spend thinking; 0 turns extended thinking off."
+    },
+    {
+     "env": "BASH_DEFAULT_TIMEOUT_MS",
+     "label": "Command timeout (ms)",
+     "help": "How long a shell command may run before it is stopped."
+    },
+    {
+     "env": "BASH_MAX_TIMEOUT_MS",
+     "label": "Longest command timeout (ms)",
+     "help": "The longest timeout the model may ask for a shell command."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Anthropic API key",
+     "help": "An API key from the Anthropic Console, for pay-as-you-go use.",
+     "hosts": []
+    },
+    {
+     "label": "Claude subscription token",
+     "help": "A long-lived token for a Claude subscription, created with claude setup-token.",
+     "hosts": []
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "codex",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "Codex",
+   "description": "OpenAI's coding agent (`codex`)",
+   "icon": "/icons/agents/codex.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "api.openai.com"
+   ],
+   "installAllow": [],
+   "ports": [],
+   "command": "codex",
+   "removable": false,
+   "settings": [],
+   "credentials": [
+    {
+     "label": "OpenAI API key",
+     "help": "An API key from the OpenAI platform.",
+     "hosts": []
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "copilot",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "GitHub Copilot CLI",
+   "description": "GitHub's coding agent (`copilot`)",
+   "icon": "/icons/agents/githubcopilot.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "api.github.com",
+    "api.githubcopilot.com",
+    "*.githubcopilot.com",
+    "copilot-proxy.githubusercontent.com"
+   ],
+   "installAllow": [],
+   "ports": [],
+   "command": "copilot",
+   "removable": false,
+   "settings": [
+    {
+     "env": "COPILOT_MODEL",
+     "label": "Model",
+     "help": "The model Copilot uses."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "GitHub token",
+     "help": "A fine-grained token with the Copilot Requests permission.",
+     "hosts": []
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "cursor",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "Cursor CLI",
+   "description": "Cursor's coding agent (`cursor-agent`)",
+   "icon": "/icons/agents/cursor.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "cursor.com",
+    "*.cursor.sh",
+    "*.cursorapi.com",
+    "*.cursor-cdn.com"
+   ],
+   "installAllow": [
+    "cursor.com",
+    "downloads.cursor.com"
+   ],
+   "ports": [],
+   "command": "cursor-agent",
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "gemini",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "Gemini CLI",
+   "description": "Google's coding agent (`gemini`)",
+   "icon": "/icons/agents/googlegemini.svg",
+   "color": "#8E75B2",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "generativelanguage.googleapis.com"
+   ],
+   "installAllow": [],
+   "ports": [],
+   "command": "gemini",
+   "removable": false,
+   "settings": [
+    {
+     "env": "GOOGLE_GEMINI_BASE_URL",
+     "label": "API endpoint",
+     "help": "Send Gemini API requests through a proxy or gateway."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Gemini API key",
+     "help": "An API key from Google AI Studio.",
+     "hosts": [
+      "generativelanguage.googleapis.com"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "goose",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "goose",
+   "description": "Block's open-source coding agent for many providers (`goose`)",
+   "icon": "/icons/agents/goose.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "api.anthropic.com",
+    "api.openai.com",
+    "openrouter.ai"
+   ],
+   "installAllow": [
+    "@packages",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": "goose",
+   "removable": false,
+   "settings": [
+    {
+     "env": "GOOSE_PROVIDER",
+     "label": "Provider",
+     "help": "The model provider goose uses."
+    },
+    {
+     "env": "GOOSE_MODE",
+     "label": "Approval mode",
+     "help": "How goose asks before it acts."
+    },
+    {
+     "env": "GOOSE_MAX_TURNS",
+     "label": "Max turns",
+     "help": "How many steps goose may take before it asks you."
+    },
+    {
+     "env": "GOOSE_TEMPERATURE",
+     "label": "Temperature",
+     "help": "Randomness of replies, from 0.0 to 1.0."
+    },
+    {
+     "env": "GOOSE_CLI_THEME",
+     "label": "Color theme",
+     "help": "The colors goose uses in the terminal."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Anthropic API key",
+     "help": "An API key from the Anthropic Console.",
+     "hosts": []
+    },
+    {
+     "label": "OpenAI API key",
+     "help": "An API key from the OpenAI platform.",
+     "hosts": []
+    },
+    {
+     "label": "OpenRouter API key",
+     "help": "An API key from OpenRouter.",
+     "hosts": []
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "herdr",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "herdr",
+   "description": "Terminal workspace that supervises coding agents (`herdr`); from your computer, attach with `herdr --remote boxquell-<name>`",
+   "icon": "/icons/agents/herdr.svg",
+   "color": "#303438",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "herdr.dev",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": "herdr",
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "opencode",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "opencode",
+   "description": "Open-source coding agent for many providers (`opencode`)",
+   "icon": "/icons/agents/opencode.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "models.dev",
+    "opencode.ai",
+    "api.anthropic.com",
+    "api.openai.com",
+    "openrouter.ai"
+   ],
+   "installAllow": [],
+   "ports": [],
+   "command": "opencode",
+   "removable": false,
+   "settings": [],
+   "credentials": [
+    {
+     "label": "Anthropic API key",
+     "help": "An API key from the Anthropic Console.",
+     "hosts": []
+    },
+    {
+     "label": "OpenAI API key",
+     "help": "An API key from the OpenAI platform.",
+     "hosts": []
+    },
+    {
+     "label": "OpenRouter API key",
+     "help": "An API key from OpenRouter.",
+     "hosts": []
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "orca",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "Orca server",
+   "description": "Headless Orca runtime (`orca serve`) for the Orca desktop app to connect to",
+   "icon": "/icons/agents/orca.svg",
+   "color": "#1F2937",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [
+    7777
+   ],
+   "command": "orca serve --bind 0.0.0.0 --port 7777 ${ORCA_PAIRING_ADDRESS:+--pairing-address $ORCA_PAIRING_ADDRESS}",
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "pi",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "pi",
+   "description": "Minimal terminal coding agent (`pi`)",
+   "icon": "/icons/agents/pi.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "api.anthropic.com",
+    "api.openai.com",
+    "openrouter.ai"
+   ],
+   "installAllow": [],
+   "ports": [],
+   "command": "pi",
+   "removable": false,
+   "settings": [],
+   "credentials": [
+    {
+     "label": "Anthropic API key",
+     "help": "An API key from the Anthropic Console.",
+     "hosts": []
+    },
+    {
+     "label": "OpenAI API key",
+     "help": "An API key from the OpenAI platform.",
+     "hosts": []
+    },
+    {
+     "label": "OpenRouter API key",
+     "help": "An API key from OpenRouter.",
+     "hosts": []
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "qwen",
+   "repo": "agents",
+   "kind": "agent",
+   "ide": false,
+   "name": "Qwen Code",
+   "description": "Alibaba's coding agent for Qwen models (`qwen`)",
+   "icon": "/icons/agents/qwen.svg",
+   "color": "#6950EF",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "dashscope.aliyuncs.com",
+    "dashscope-intl.aliyuncs.com",
+    "coding.dashscope.aliyuncs.com",
+    "coding-intl.dashscope.aliyuncs.com",
+    "maas.qwencloudapi.com",
+    "maas.qianwenaiapi.com",
+    "models.dev",
+    "api.openai.com",
+    "openrouter.ai"
+   ],
+   "installAllow": [],
+   "ports": [],
+   "command": "qwen",
+   "removable": false,
+   "settings": [
+    {
+     "env": "OPENAI_MODEL",
+     "label": "Model",
+     "help": "The model name sent to an OpenAI-compatible provider."
+    },
+    {
+     "env": "OPENAI_BASE_URL",
+     "label": "API endpoint",
+     "help": "The OpenAI-compatible endpoint Qwen Code talks to."
+    },
+    {
+     "env": "QWEN_CODE_MAX_OUTPUT_TOKENS",
+     "label": "Max output tokens",
+     "help": "A fixed limit on the tokens of one reply."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "DashScope API key",
+     "help": "An API key for Alibaba Cloud Model Studio (DashScope).",
+     "hosts": [
+      "dashscope.aliyuncs.com",
+      "dashscope-intl.aliyuncs.com",
+      "coding.dashscope.aliyuncs.com",
+      "coding-intl.dashscope.aliyuncs.com",
+      "maas.qwencloudapi.com",
+      "maas.qianwenaiapi.com"
+     ]
+    },
+    {
+     "label": "OpenAI API key",
+     "help": "An API key from the OpenAI platform.",
+     "hosts": []
+    },
+    {
+     "label": "OpenRouter API key",
+     "help": "An API key from OpenRouter.",
+     "hosts": []
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "c",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "C",
+   "description": "gcc and clang with make, the gdb debugger and valgrind",
+   "icon": "/icons/languages/c.svg",
+   "color": "#A8B9CC",
+   "ink": "#0b0f15",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "build-essential"
+   ],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": true,
+   "settings": [
+    {
+     "env": "CC",
+     "label": "C compiler",
+     "help": "The compiler that make and most build systems call."
+    },
+    {
+     "env": "CFLAGS",
+     "label": "Compiler flags",
+     "help": "Flags that make and most build systems add to every compiler call."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "cpp",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "C++",
+   "description": "g++ and clang++ with CMake, Ninja, gdb, clang-format and clang-tidy",
+   "icon": "/icons/languages/cplusplus.svg",
+   "color": "#00599C",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "build-essential",
+    "cmake"
+   ],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": true,
+   "settings": [
+    {
+     "env": "CXX",
+     "label": "C++ compiler",
+     "help": "The compiler that CMake, make and most build systems call."
+    },
+    {
+     "env": "CXXFLAGS",
+     "label": "Compiler flags",
+     "help": "Flags that most build systems add to every compiler call."
+    },
+    {
+     "env": "CMAKE_GENERATOR",
+     "label": "CMake generator",
+     "help": "The build tool CMake writes files for."
+    },
+    {
+     "env": "CMAKE_BUILD_PARALLEL_LEVEL",
+     "label": "Parallel build jobs",
+     "help": "How many compile jobs a CMake build runs at once."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "dart",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Dart",
+   "description": "Dart SDK with the pub package manager",
+   "icon": "/icons/languages/dart.svg",
+   "color": "#0175C2",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "pub.dev",
+    "storage.googleapis.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "storage.googleapis.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": true,
+   "settings": [
+    {
+     "env": "PUB_HOSTED_URL",
+     "label": "Package registry",
+     "help": "Where pub downloads packages from."
+    },
+    {
+     "env": "PUB_CACHE",
+     "label": "Package cache",
+     "help": "Where pub keeps downloaded packages."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "dotnet",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": ".NET",
+   "description": ".NET SDK with the `dotnet` command, in /usr/local/dotnet",
+   "icon": "/icons/languages/dotnet.svg",
+   "color": "#512BD4",
+   "ink": "#ffffff",
+   "versions": [
+    "10.0",
+    "11.0"
+   ],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "api.nuget.org",
+    "*.nuget.org"
+   ],
+   "installAllow": [
+    "@packages",
+    "dot.net",
+    "builds.dotnet.microsoft.com",
+    "ci.dot.net",
+    "dotnetcli.azureedge.net",
+    "dotnetcli.blob.core.windows.net"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "NUGET_PACKAGES",
+     "label": "NuGet package folder",
+     "help": "Where NuGet keeps downloaded packages."
+    },
+    {
+     "env": "DOTNET_CLI_UI_LANGUAGE",
+     "label": "Tool language",
+     "help": "Language of .NET CLI messages, as a locale such as en-us."
+    },
+    {
+     "env": "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT",
+     "label": "Invariant globalization",
+     "help": "Run without ICU culture data."
+    },
+    {
+     "env": "ASPNETCORE_ENVIRONMENT",
+     "label": "ASP.NET environment",
+     "help": "Which environment an ASP.NET Core app runs as."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "elixir",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Elixir",
+   "description": "Elixir with Erlang/OTP 28 and Mix, from the precompiled builds of builds.hex.pm",
+   "icon": "/icons/languages/elixir.svg",
+   "color": "#8847B9",
+   "ink": "#ffffff",
+   "versions": [
+    "1.20",
+    "1.19",
+    "1.18"
+   ],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "hex.pm",
+    "repo.hex.pm",
+    "builds.hex.pm",
+    "github.com",
+    "*.githubusercontent.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "builds.hex.pm"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "MIX_ENV",
+     "label": "Mix environment",
+     "help": "Which environment Mix builds for."
+    },
+    {
+     "env": "HEX_MIRROR_URL",
+     "label": "Hex mirror",
+     "help": "Where Hex downloads packages from."
+    },
+    {
+     "env": "MIX_DEBUG",
+     "label": "Mix debug output",
+     "help": "Print each Mix task as it runs."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "go",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Go",
+   "description": "Go toolchain in /usr/local/go",
+   "icon": "/icons/languages/go.svg",
+   "color": "#00ADD8",
+   "ink": "#ffffff",
+   "versions": [
+    "1.27",
+    "1.26",
+    "1.25"
+   ],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "proxy.golang.org",
+    "sum.golang.org"
+   ],
+   "installAllow": [
+    "go.dev",
+    "dl.google.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "GOPROXY",
+     "label": "Module proxy",
+     "help": "Where Go downloads modules from."
+    },
+    {
+     "env": "GOPRIVATE",
+     "label": "Private modules",
+     "help": "Comma-separated module path patterns fetched directly, not through the proxy."
+    },
+    {
+     "env": "GOFLAGS",
+     "label": "Default flags",
+     "help": "Flags added to every go command."
+    },
+    {
+     "env": "GOTOOLCHAIN",
+     "label": "Toolchain",
+     "help": "Whether Go may download a newer toolchain when a module asks for one."
+    },
+    {
+     "env": "GOMAXPROCS",
+     "label": "Parallel threads",
+     "help": "How many CPUs Go programs use at once."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "java",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Java",
+   "description": "Eclipse Temurin JDK with Maven and Gradle",
+   "icon": "/icons/languages/openjdk.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [
+    "25",
+    "21",
+    "17"
+   ],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "repo.maven.apache.org",
+    "repo1.maven.org",
+    "plugins.gradle.org",
+    "services.gradle.org",
+    "downloads.gradle.org",
+    "plugins-artifacts.gradle.org"
+   ],
+   "installAllow": [
+    "@packages",
+    "api.adoptium.net",
+    "github.com",
+    "*.githubusercontent.com",
+    "repo.maven.apache.org",
+    "services.gradle.org",
+    "downloads.gradle.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "JAVA_TOOL_OPTIONS",
+     "label": "JVM options",
+     "help": "Options picked up by every JVM that starts."
+    },
+    {
+     "env": "MAVEN_OPTS",
+     "label": "Maven JVM options",
+     "help": "Options for the JVM that runs Maven."
+    },
+    {
+     "env": "MAVEN_ARGS",
+     "label": "Maven arguments",
+     "help": "Arguments added to every mvn call."
+    },
+    {
+     "env": "GRADLE_OPTS",
+     "label": "Gradle JVM options",
+     "help": "Options for the JVM that runs the Gradle client."
+    },
+    {
+     "env": "GRADLE_USER_HOME",
+     "label": "Gradle home",
+     "help": "Where Gradle keeps its caches and settings."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "kotlin",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Kotlin",
+   "description": "Kotlin compiler (`kotlinc`) in /usr/local/kotlin; installs the JDK from this repository",
+   "icon": "/icons/languages/kotlin.svg",
+   "color": "#7F52FF",
+   "ink": "#ffffff",
+   "versions": [
+    "2.4",
+    "2.3",
+    "2.2"
+   ],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "java"
+   ],
+   "allow": [
+    "repo.maven.apache.org",
+    "repo1.maven.org",
+    "plugins.gradle.org"
+   ],
+   "installAllow": [
+    "@packages",
+    "repo.maven.apache.org",
+    "github.com",
+    "*.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "lua",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Lua",
+   "description": "Lua interpreter and compiler, built from source into /usr/local",
+   "icon": "/icons/languages/lua.svg",
+   "color": "#000080",
+   "ink": "#ffffff",
+   "versions": [
+    "5.5",
+    "5.4"
+   ],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "build-essential"
+   ],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "www.lua.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "node",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Node.js",
+   "description": "Node.js with npm, installed to /usr/local",
+   "icon": "/icons/languages/nodedotjs.svg",
+   "color": "#5FA04E",
+   "ink": "#ffffff",
+   "versions": [
+    "24",
+    "26",
+    "22",
+    "20"
+   ],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "registry.npmjs.org"
+   ],
+   "installAllow": [
+    "nodejs.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "NODE_OPTIONS",
+     "label": "Node options",
+     "help": "Command line options passed to every Node process."
+    },
+    {
+     "env": "NPM_CONFIG_REGISTRY",
+     "label": "Package registry",
+     "help": "Where npm downloads packages from."
+    },
+    {
+     "env": "NODE_NO_WARNINGS",
+     "label": "No warnings",
+     "help": "Hide process warnings such as deprecation notices."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "pascal",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Free Pascal",
+   "description": "Free Pascal compiler (`fpc`) with its units, from Debian",
+   "icon": "/icons/languages/pascal.svg",
+   "color": "#1F6FB5",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": true,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "perl",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Perl",
+   "description": "Perl from Debian with cpanminus for modules from CPAN",
+   "icon": "/icons/languages/perl.svg",
+   "color": "#0073A1",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "build-essential"
+   ],
+   "allow": [
+    "cpanmetadb.plackperl.org",
+    "fastapi.metacpan.org",
+    "cpan.metacpan.org",
+    "www.cpan.org"
+   ],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": true,
+   "settings": [
+    {
+     "env": "PERL_CPANM_OPT",
+     "label": "cpanm options",
+     "help": "Options added to every cpanm call."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "php",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "PHP",
+   "description": "PHP command line with common extensions, from packages.sury.org",
+   "icon": "/icons/languages/php.svg",
+   "color": "#777BB4",
+   "ink": "#ffffff",
+   "versions": [
+    "8.5",
+    "8.4",
+    "8.3",
+    "8.2"
+   ],
+   "os": [
+    "debian"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "packages.sury.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "python",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Python",
+   "description": "Python 3 managed by uv (`python3`, `uv`, `uvx`)",
+   "icon": "/icons/languages/python.svg",
+   "color": "#3776AB",
+   "ink": "#ffffff",
+   "versions": [
+    "3.15",
+    "3.14",
+    "3.13",
+    "3.12"
+   ],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "pypi.org",
+    "files.pythonhosted.org"
+   ],
+   "installAllow": [
+    "astral.sh",
+    "*.astral.sh",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "PIP_INDEX_URL",
+     "label": "pip package index",
+     "help": "Where pip downloads packages from."
+    },
+    {
+     "env": "UV_DEFAULT_INDEX",
+     "label": "uv package index",
+     "help": "Where uv downloads packages from."
+    },
+    {
+     "env": "UV_LINK_MODE",
+     "label": "uv link mode",
+     "help": "How uv puts cached packages into a virtual environment."
+    },
+    {
+     "env": "PYTHONDONTWRITEBYTECODE",
+     "label": "No bytecode files",
+     "help": "Do not write .pyc files."
+    },
+    {
+     "env": "PYTHONUNBUFFERED",
+     "label": "Unbuffered output",
+     "help": "Show Python output at once instead of in blocks."
+    },
+    {
+     "env": "PYTHONUTF8",
+     "label": "Force UTF-8",
+     "help": "Use UTF-8 for text regardless of the locale."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "ruby",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Ruby",
+   "description": "Ruby with gem and bundler, built from source into /usr/local",
+   "icon": "/icons/languages/ruby.svg",
+   "color": "#CC342D",
+   "ink": "#ffffff",
+   "versions": [
+    "4.0",
+    "3.4",
+    "3.3"
+   ],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "build-essential"
+   ],
+   "allow": [
+    "rubygems.org",
+    "index.rubygems.org",
+    "*.rubygems.org"
+   ],
+   "installAllow": [
+    "@packages",
+    "cache.ruby-lang.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "RUBYOPT",
+     "label": "Ruby options",
+     "help": "Command line options passed to every Ruby process."
+    },
+    {
+     "env": "RUBY_YJIT_ENABLE",
+     "label": "Enable YJIT",
+     "help": "Turn on the YJIT compiler."
+    },
+    {
+     "env": "BUNDLE_JOBS",
+     "label": "Bundler jobs",
+     "help": "How many gems Bundler installs in parallel."
+    },
+    {
+     "env": "BUNDLE_WITHOUT",
+     "label": "Skipped groups",
+     "help": "Gem groups Bundler does not install, separated by colons."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "rust",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Rust",
+   "description": "Stable Rust via rustup (`cargo`, `rustc`)",
+   "icon": "/icons/languages/rust.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "build-essential"
+   ],
+   "allow": [
+    "crates.io",
+    "index.crates.io",
+    "static.crates.io"
+   ],
+   "installAllow": [
+    "sh.rustup.rs",
+    "static.rust-lang.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "CARGO_TERM_COLOR",
+     "label": "Cargo colors",
+     "help": "When Cargo colors its output."
+    },
+    {
+     "env": "RUSTFLAGS",
+     "label": "Compiler flags",
+     "help": "Extra flags for every rustc call."
+    },
+    {
+     "env": "CARGO_BUILD_JOBS",
+     "label": "Build jobs",
+     "help": "How many compile jobs run in parallel."
+    },
+    {
+     "env": "RUST_BACKTRACE",
+     "label": "Backtraces",
+     "help": "How much a panic shows of where it happened."
+    },
+    {
+     "env": "CARGO_NET_GIT_FETCH_WITH_CLI",
+     "label": "Fetch with git",
+     "help": "Let Cargo use the git command for git dependencies."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "zig",
+   "repo": "languages",
+   "kind": "language",
+   "ide": false,
+   "name": "Zig",
+   "description": "Zig compiler and build system in /usr/local/zig",
+   "icon": "/icons/languages/zig.svg",
+   "color": "#F7A41D",
+   "ink": "#0b0f15",
+   "versions": [
+    "0.17",
+    "0.16",
+    "0.15"
+   ],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "ziglang.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "adminer",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Adminer",
+   "description": "Adminer, a database manager in a single PHP file for MariaDB and PostgreSQL, served with PHP's built-in web server on port 8082 and started at every boot (needs `php`; the servers come from the `mariadb` and `postgres` recipes)",
+   "icon": "/icons/tools/adminer.svg",
+   "color": "#34567C",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "php"
+   ],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "packages.sury.org",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [
+    8082
+   ],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "android-sdk",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Android SDK",
+   "description": "Android command-line tools, platform tools, a platform and build tools, for building apps with Gradle or Flutter; installing it accepts Google's SDK licences. No emulator.",
+   "icon": "/icons/tools/android.svg",
+   "color": "#34A853",
+   "ink": "#ffffff",
+   "versions": [
+    "36",
+    "35",
+    "34"
+   ],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "java>=17"
+   ],
+   "allow": [
+    "dl.google.com",
+    "maven.google.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "dl.google.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": true,
+   "settings": [
+    {
+     "env": "GRADLE_OPTS",
+     "label": "Gradle JVM options",
+     "help": "Options for the JVM that runs the Gradle client; Android builds often need more memory."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "aws-cli",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "AWS CLI",
+   "description": "AWS CLI v2 (`aws`), installed system-wide with AWS's own installer",
+   "icon": "/icons/tools/cloud.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "*.amazonaws.com",
+    "*.api.aws"
+   ],
+   "installAllow": [
+    "awscli.amazonaws.com",
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "AWS_PROFILE",
+     "label": "Profile",
+     "help": "Named profile from the AWS config files."
+    },
+    {
+     "env": "AWS_DEFAULT_REGION",
+     "label": "Region",
+     "help": "Region that commands use unless told otherwise."
+    },
+    {
+     "env": "AWS_DEFAULT_OUTPUT",
+     "label": "Output format",
+     "help": "How command results are printed."
+    },
+    {
+     "env": "AWS_PAGER",
+     "label": "Pager",
+     "help": "Program that pages output. Set to an empty string in the shell to turn paging off."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "azure-cli",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Azure CLI",
+   "description": "Azure CLI (`az`) from Microsoft's apt repository",
+   "icon": "/icons/tools/cloud.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "login.microsoftonline.com",
+    "management.azure.com",
+    "graph.microsoft.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "packages.microsoft.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "AZURE_DEFAULTS_GROUP",
+     "label": "Resource group",
+     "help": "Resource group that commands use unless told otherwise."
+    },
+    {
+     "env": "AZURE_DEFAULTS_LOCATION",
+     "label": "Location",
+     "help": "Location that commands use unless told otherwise."
+    },
+    {
+     "env": "AZURE_CORE_OUTPUT",
+     "label": "Output format",
+     "help": "How command results are printed."
+    },
+    {
+     "env": "AZURE_CORE_COLLECT_TELEMETRY",
+     "label": "Usage data",
+     "help": "Whether usage data is sent to Microsoft."
+    },
+    {
+     "env": "AZURE_CORE_ONLY_SHOW_ERRORS",
+     "label": "Errors only",
+     "help": "Hide warnings and show only errors."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "bat",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "bat",
+   "description": "A cat clone with syntax highlighting (`bat`)",
+   "icon": "/icons/tools/bat.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "BAT_THEME",
+     "label": "Theme",
+     "help": "Color theme for syntax highlighting."
+    },
+    {
+     "env": "BAT_STYLE",
+     "label": "Style",
+     "help": "Which decorations bat shows."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "bitbucket-cli",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Bitbucket CLI",
+   "description": "`bkt` (avivsinai/bitbucket-cli) for Bitbucket Cloud; allow your workspace with a `bitbucket` secret that sets BKT_TOKEN",
+   "icon": "/icons/tools/bitbucket.svg",
+   "color": "#0052CC",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "bitbucket.org",
+    "*.bitbucket.org",
+    "api.bitbucket.org"
+   ],
+   "installAllow": [
+    "@packages",
+    "github.com",
+    "*.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "BKT_WORKSPACE",
+     "label": "Workspace",
+     "help": "Default Cloud workspace."
+    },
+    {
+     "env": "BKT_PROJECT",
+     "label": "Project",
+     "help": "Default Data Center project key."
+    },
+    {
+     "env": "BKT_REPO",
+     "label": "Repository",
+     "help": "Repository that commands use unless told otherwise."
+    },
+    {
+     "env": "BKT_USERNAME",
+     "label": "User name",
+     "help": "For basic authentication; with a Cloud API token this is your Atlassian account e-mail."
+    },
+    {
+     "env": "BKT_AUTH_METHOD",
+     "label": "Authentication",
+     "help": "basic sends user name and token (Cloud default); bearer sends the token alone (Data Center default without a user name, and Cloud access tokens)."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Bitbucket access token",
+     "help": "Cloud: an Atlassian API token with Bitbucket scopes (create it with scopes, app Bitbucket) used with your e-mail as User name (basic), or a repository, project or workspace access token (bearer). Data Center: a personal access token (bearer).",
+     "hosts": [
+      "bitbucket.org",
+      "api.bitbucket.org"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "build-essential",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "C/C++ build tools",
+   "description": "gcc, g++, make and pkg-config from Debian",
+   "icon": "/icons/tools/build-essential.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "bun",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Bun",
+   "description": "Bun runtime, package manager and bundler for JavaScript and TypeScript",
+   "icon": "/icons/tools/bun.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "registry.npmjs.org"
+   ],
+   "installAllow": [
+    "@packages",
+    "github.com",
+    "*.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "BUN_CONFIG_MAX_HTTP_REQUESTS",
+     "label": "Parallel downloads",
+     "help": "How many HTTP requests bun install runs at once."
+    },
+    {
+     "env": "DO_NOT_TRACK",
+     "label": "No usage reports",
+     "help": "Do not upload crash reports or telemetry."
+    },
+    {
+     "env": "NO_COLOR",
+     "label": "No colors",
+     "help": "Turn off colored output."
+    },
+    {
+     "env": "BUN_CONFIG_NO_CLEAR_TERMINAL_ON_RELOAD",
+     "label": "Keep screen on reload",
+     "help": "Do not clear the terminal when bun --watch reloads."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "caddy",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Caddy",
+   "description": "Caddy (`caddy`), a web server with automatic HTTPS, from the official Debian repository; not started by itself, for example `caddy file-server --listen :2015` (port 2015 is forwarded)",
+   "icon": "/icons/tools/caddy.svg",
+   "color": "#1F88C0",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "dl.cloudsmith.io"
+   ],
+   "ports": [
+    2015
+   ],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "cargo-binstall",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "cargo-binstall",
+   "description": "cargo-binstall (`cargo binstall`), installs Rust tools as prebuilt binaries instead of compiling them (needs `rust`)",
+   "icon": "/icons/tools/package-check.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "rust"
+   ],
+   "allow": [
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com",
+    "crates.io",
+    "index.crates.io",
+    "static.crates.io"
+   ],
+   "installAllow": [
+    "raw.githubusercontent.com",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "cargo-nextest",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "cargo-nextest",
+   "description": "cargo-nextest (`cargo nextest`), a faster test runner for Rust (needs `rust`)",
+   "icon": "/icons/tools/test-tubes.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "rust"
+   ],
+   "allow": [],
+   "installAllow": [
+    "get.nexte.st",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "NEXTEST_PROFILE",
+     "label": "Profile",
+     "help": "Which profile of the nextest configuration to use."
+    },
+    {
+     "env": "NEXTEST_TEST_THREADS",
+     "label": "Test threads",
+     "help": "How many tests run at once."
+    },
+    {
+     "env": "NEXTEST_RETRIES",
+     "label": "Retries",
+     "help": "How often a failing test is run again."
+    },
+    {
+     "env": "NEXTEST_HIDE_PROGRESS_BAR",
+     "label": "No progress bar",
+     "help": "Hide the progress bar."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "cmake",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "CMake",
+   "description": "CMake from the Kitware release installer, installed to /usr/local (needs a C/C++ compiler, for example `build-essential`)",
+   "icon": "/icons/tools/cmake.svg",
+   "color": "#064F8C",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "code-server",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": true,
+   "name": "code-server",
+   "description": "VS Code in the browser, served from the sandbox on port 8080",
+   "icon": "/icons/tools/vscode.svg",
+   "color": "#007ACC",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "open-vsx.org",
+    "openvsxorg.blob.core.windows.net"
+   ],
+   "installAllow": [
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [
+    8080
+   ],
+   "command": "code-server --bind-addr 0.0.0.0:8080 --auth none --disable-telemetry --disable-update-check .",
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "composer",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Composer",
+   "description": "Dependency manager for PHP (`composer`)",
+   "icon": "/icons/tools/composer.svg",
+   "color": "#885630",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian"
+   ],
+   "requires": [
+    "php"
+   ],
+   "allow": [
+    "repo.packagist.org",
+    "packagist.org",
+    "api.github.com",
+    "codeload.github.com",
+    "github.com"
+   ],
+   "installAllow": [
+    "composer.github.io",
+    "getcomposer.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "COMPOSER_MEMORY_LIMIT",
+     "label": "Memory limit",
+     "help": "PHP memory limit for Composer, for example 2G or -1."
+    },
+    {
+     "env": "COMPOSER_PROCESS_TIMEOUT",
+     "label": "Process timeout",
+     "help": "Seconds a command may run before it is stopped."
+    },
+    {
+     "env": "COMPOSER_NO_INTERACTION",
+     "label": "No prompts",
+     "help": "Never ask interactive questions."
+    },
+    {
+     "env": "COMPOSER_NO_DEV",
+     "label": "No dev packages",
+     "help": "Skip packages from require-dev."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "confluence-cli",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Confluence CLI",
+   "description": "`confluence` (pchuri/confluence-cli) for Confluence Cloud; allow your site with a `confluence` secret that sets CONFLUENCE_API_TOKEN",
+   "icon": "/icons/tools/confluence.svg",
+   "color": "#172B4D",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "*.atlassian.net",
+    "api.atlassian.com"
+   ],
+   "installAllow": [
+    "registry.npmjs.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "CONFLUENCE_DOMAIN",
+     "label": "Site",
+     "help": "Host of your Confluence site."
+    },
+    {
+     "env": "CONFLUENCE_EMAIL",
+     "label": "Email",
+     "help": "Account email for basic authentication."
+    },
+    {
+     "env": "CONFLUENCE_AUTH_TYPE",
+     "label": "Authentication",
+     "help": "basic (default when an email is set) or bearer (default without an email); cookie, mtls and none also exist."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Confluence API token",
+     "help": "An Atlassian API token (Cloud, sent with the email from the Config tab as HTTP Basic) or a personal access token (Data Center, bearer).",
+     "hosts": [
+      "*.atlassian.net",
+      "api.atlassian.com"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "delve",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Delve",
+   "description": "Delve (`dlv`), the Go debugger (needs `go`)",
+   "icon": "/icons/tools/bug.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "go"
+   ],
+   "allow": [],
+   "installAllow": [
+    "proxy.golang.org",
+    "sum.golang.org",
+    "github.com",
+    "go.dev",
+    "dl.google.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "deno",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Deno",
+   "description": "Deno runtime for TypeScript and JavaScript",
+   "icon": "/icons/tools/deno.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "jsr.io",
+    "deno.land",
+    "registry.npmjs.org"
+   ],
+   "installAllow": [
+    "@packages",
+    "dl.deno.land"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "NPM_CONFIG_REGISTRY",
+     "label": "Package registry",
+     "help": "Where Deno downloads npm packages from."
+    },
+    {
+     "env": "DENO_DIR",
+     "label": "Cache folder",
+     "help": "Where Deno keeps its cache."
+    },
+    {
+     "env": "DENO_NO_UPDATE_CHECK",
+     "label": "No update check",
+     "help": "Do not check for a newer Deno."
+    },
+    {
+     "env": "DENO_NO_PROMPT",
+     "label": "No permission prompts",
+     "help": "Fail instead of asking for a permission."
+    },
+    {
+     "env": "NO_COLOR",
+     "label": "No colors",
+     "help": "Turn off colored output."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "docker",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Docker",
+   "description": "Docker Engine with Buildx and Compose; containers use the sandbox's network (`--network host`)",
+   "icon": "/icons/tools/docker.svg",
+   "color": "#2496ED",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian"
+   ],
+   "requires": [],
+   "allow": [
+    "registry-1.docker.io",
+    "auth.docker.io",
+    "production.cloudfront.docker.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "download.docker.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "DOCKER_DEFAULT_PLATFORM",
+     "label": "Default platform",
+     "help": "Platform used to pull and build images."
+    },
+    {
+     "env": "BUILDKIT_PROGRESS",
+     "label": "Build output",
+     "help": "How docker build shows its progress."
+    },
+    {
+     "env": "COMPOSE_PROJECT_NAME",
+     "label": "Compose project name",
+     "help": "Name that Compose gives to a project."
+    },
+    {
+     "env": "DOCKER_CLI_HINTS",
+     "label": "CLI hints",
+     "help": "Whether the docker command prints hints."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "eslint",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "ESLint",
+   "description": "ESLint (`eslint`) as a global npm package (needs `node`)",
+   "icon": "/icons/tools/eslint.svg",
+   "color": "#4B32C3",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "registry.npmjs.org"
+   ],
+   "installAllow": [
+    "registry.npmjs.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "fd",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "fd",
+   "description": "Fast, friendly alternative to find (`fd`)",
+   "icon": "/icons/tools/fd.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "ffmpeg",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "FFmpeg",
+   "description": "FFmpeg and ffprobe for converting audio and video",
+   "icon": "/icons/tools/ffmpeg.svg",
+   "color": "#007808",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "flutter",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Flutter",
+   "description": "Flutter SDK with its own Dart, for web apps and, with the Android SDK, Android apps",
+   "icon": "/icons/tools/flutter.svg",
+   "color": "#02569B",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "pub.dev",
+    "storage.googleapis.com",
+    "maven.google.com",
+    "dl.google.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "storage.googleapis.com",
+    "github.com",
+    "*.githubusercontent.com",
+    "pub.dev"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": true,
+   "settings": [
+    {
+     "env": "PUB_HOSTED_URL",
+     "label": "Package registry",
+     "help": "Where pub downloads packages from."
+    },
+    {
+     "env": "FLUTTER_STORAGE_BASE_URL",
+     "label": "Download server",
+     "help": "Where Flutter downloads its engine and tools from, for a mirror."
+    },
+    {
+     "env": "PUB_CACHE",
+     "label": "Package cache",
+     "help": "Where pub keeps downloaded packages."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "fzf",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "fzf",
+   "description": "Command-line fuzzy finder (`fzf`)",
+   "icon": "/icons/tools/fzf.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "FZF_DEFAULT_COMMAND",
+     "label": "Default command",
+     "help": "Command that lists the entries when nothing is piped in."
+    },
+    {
+     "env": "FZF_DEFAULT_OPTS",
+     "label": "Default options",
+     "help": "Options that every fzf run starts with."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "gcloud",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Google Cloud CLI",
+   "description": "Google Cloud CLI (`gcloud`, `gsutil`, `bq`) from Google's apt repository",
+   "icon": "/icons/tools/googlecloud.svg",
+   "color": "#4285F4",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "*.googleapis.com",
+    "accounts.google.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "packages.cloud.google.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "CLOUDSDK_CORE_PROJECT",
+     "label": "Project",
+     "help": "Project ID that commands use unless told otherwise."
+    },
+    {
+     "env": "CLOUDSDK_COMPUTE_REGION",
+     "label": "Compute region",
+     "help": "Default region for Compute Engine."
+    },
+    {
+     "env": "CLOUDSDK_COMPUTE_ZONE",
+     "label": "Compute zone",
+     "help": "Default zone for Compute Engine."
+    },
+    {
+     "env": "CLOUDSDK_CORE_DISABLE_PROMPTS",
+     "label": "No prompts",
+     "help": "Never ask interactive questions."
+    },
+    {
+     "env": "CLOUDSDK_CORE_VERBOSITY",
+     "label": "Verbosity",
+     "help": "Lowest level of message that is shown."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Google Cloud access token",
+     "help": "An OAuth access token, which lasts one hour; print one with gcloud auth print-access-token.",
+     "hosts": [
+      "*.googleapis.com"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "gh",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "GitHub CLI",
+   "description": "`gh`, with github.com allowed for git and the API",
+   "icon": "/icons/tools/github.svg",
+   "color": "#181717",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "github.com",
+    "api.github.com"
+   ],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "GH_HOST",
+     "label": "GitHub host",
+     "help": "The GitHub hostname to use when none can be inferred, for GitHub Enterprise."
+    },
+    {
+     "env": "GH_REPO",
+     "label": "Default repository",
+     "help": "Repository for commands that otherwise use the local clone, as [HOST/]OWNER/REPO."
+    },
+    {
+     "env": "GH_PAGER",
+     "label": "Pager",
+     "help": "Program that pages long output."
+    },
+    {
+     "env": "GH_PROMPT_DISABLED",
+     "label": "No prompts",
+     "help": "Never ask interactive questions."
+    },
+    {
+     "env": "GH_NO_UPDATE_NOTIFIER",
+     "label": "No update notices",
+     "help": "Do not tell about new versions."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "GitHub access token",
+     "help": "A personal access token with the scopes you need.",
+     "hosts": []
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "git",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Git",
+   "description": "git with Git LFS from Debian",
+   "icon": "/icons/tools/git.svg",
+   "color": "#F03C2E",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "GIT_AUTHOR_NAME",
+     "label": "Author name",
+     "help": "Name recorded as the author of commits."
+    },
+    {
+     "env": "GIT_AUTHOR_EMAIL",
+     "label": "Author email",
+     "help": "Email recorded as the author of commits."
+    },
+    {
+     "env": "GIT_COMMITTER_NAME",
+     "label": "Committer name",
+     "help": "Name recorded as the committer of commits."
+    },
+    {
+     "env": "GIT_COMMITTER_EMAIL",
+     "label": "Committer email",
+     "help": "Email recorded as the committer of commits."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "glab",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "GitLab CLI",
+   "description": "`glab`, with gitlab.com allowed for git and the API (set GITLAB_TOKEN with a `gitlab` secret)",
+   "icon": "/icons/tools/gitlab.svg",
+   "color": "#FC6D26",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "gitlab.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "gitlab.com",
+    "*.gitlab.com",
+    "*.googleapis.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "GITLAB_HOST",
+     "label": "GitLab host",
+     "help": "The GitLab hostname to use, for a self-managed instance."
+    },
+    {
+     "env": "NO_PROMPT",
+     "label": "No prompts",
+     "help": "Never ask interactive questions."
+    },
+    {
+     "env": "GLAB_PAGER",
+     "label": "Pager",
+     "help": "Program that pages long output."
+    },
+    {
+     "env": "GLAB_GLAMOUR_STYLE",
+     "label": "Markdown style",
+     "help": "Color style for rendered Markdown."
+    },
+    {
+     "env": "GLAB_SEND_TELEMETRY",
+     "label": "Usage data",
+     "help": "Whether usage data is sent to your GitLab instance."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "GitLab access token",
+     "help": "A personal access token with the api scope.",
+     "hosts": [
+      "gitlab.com"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "golangci-lint",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "golangci-lint",
+   "description": "golangci-lint, the Go linters runner (needs `go`)",
+   "icon": "/icons/tools/shield-check.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "go"
+   ],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "golangci-lint.run",
+    "raw.githubusercontent.com",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "helm",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Helm",
+   "description": "Helm, the Kubernetes package manager, from the Helm project's apt repository",
+   "icon": "/icons/tools/helm.svg",
+   "color": "#0F1689",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "packages.buildkite.com",
+    "d3fo0g5hm7lbuv.cloudfront.net"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "HELM_NAMESPACE",
+     "label": "Namespace",
+     "help": "Namespace that Helm works in unless told otherwise."
+    },
+    {
+     "env": "HELM_KUBECONTEXT",
+     "label": "Kube context",
+     "help": "Name of the kubeconfig context to use."
+    },
+    {
+     "env": "HELM_DEBUG",
+     "label": "Debug output",
+     "help": "Run Helm in debug mode."
+    },
+    {
+     "env": "HELM_MAX_HISTORY",
+     "label": "Release history",
+     "help": "How many revisions of a release are kept."
+    },
+    {
+     "env": "HELM_COLOR",
+     "label": "Color",
+     "help": "When Helm colors its output."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "homebrew",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Homebrew",
+   "description": "Homebrew, the package manager (`brew`), in /home/linuxbrew/.linuxbrew",
+   "icon": "/icons/tools/homebrew.svg",
+   "color": "#FBB040",
+   "ink": "#0b0f15",
+   "versions": [],
+   "os": [
+    "debian"
+   ],
+   "requires": [],
+   "allow": [
+    "formulae.brew.sh",
+    "ghcr.io",
+    "pkg-containers.githubusercontent.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "raw.githubusercontent.com",
+    "github.com",
+    "formulae.brew.sh",
+    "ghcr.io",
+    "pkg-containers.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "HOMEBREW_NO_AUTO_UPDATE",
+     "label": "No automatic update",
+     "help": "Do not update Homebrew before each install."
+    },
+    {
+     "env": "HOMEBREW_NO_ANALYTICS",
+     "label": "No analytics",
+     "help": "Do not send usage statistics."
+    },
+    {
+     "env": "HOMEBREW_NO_INSTALL_CLEANUP",
+     "label": "Keep old versions",
+     "help": "Do not remove old versions after an install."
+    },
+    {
+     "env": "HOMEBREW_NO_ENV_HINTS",
+     "label": "No hints",
+     "help": "Hide the hints printed after commands."
+    },
+    {
+     "env": "HOMEBREW_VERBOSE",
+     "label": "Verbose",
+     "help": "Print more details."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "imagemagick",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "ImageMagick",
+   "description": "ImageMagick command-line tools (`convert`, `identify`, `mogrify`) for editing images",
+   "icon": "/icons/tools/imagemagick.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "jetbrains-remote",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": true,
+   "name": "JetBrains Remote",
+   "description": "Opens the network for JetBrains Gateway to install its IDE backend and plugins",
+   "icon": "/icons/tools/jetbrains.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "download.jetbrains.com",
+    "download-cdn.jetbrains.com",
+    "cache-redirector.jetbrains.com",
+    "data.services.jetbrains.com",
+    "plugins.jetbrains.com",
+    "resources.jetbrains.com"
+   ],
+   "installAllow": [],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "jira-cli",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Jira CLI",
+   "description": "`jira` (ankitpokhrel/jira-cli) for Jira Cloud; allow your site with a `jira` secret that sets JIRA_API_TOKEN",
+   "icon": "/icons/tools/jira.svg",
+   "color": "#0052CC",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "*.atlassian.net",
+    "api.atlassian.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "github.com",
+    "*.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "JIRA_AUTH_TYPE",
+     "label": "Authentication",
+     "help": "basic (the default) sends login and token; bearer sends a personal access token; mtls uses client certificates."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Jira API token",
+     "help": "Jira Cloud: an Atlassian API token (Authentication basic, the default). Jira Data Center: a personal access token (Authentication bearer). The site and your login are set with 'Set up Jira' below.",
+     "hosts": [
+      "*.atlassian.net",
+      "api.atlassian.com"
+     ]
+    }
+   ],
+   "actions": [
+    {
+     "label": "Set up Jira",
+     "help": "Writes the Jira CLI's configuration: your site, your account, a default project and its board. Store the token first; the setup signs in with it."
+    }
+   ]
+  },
+  {
+   "id": "jq",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "jq",
+   "description": "Command-line JSON processor",
+   "icon": "/icons/tools/jq.svg",
+   "color": "#444444",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "jupyter",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "JupyterLab",
+   "description": "JupyterLab on port 8888, started at every boot and reachable from the host without a token (needs `python`)",
+   "icon": "/icons/tools/jupyter.svg",
+   "color": "#F37626",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "python"
+   ],
+   "allow": [
+    "pypi.org",
+    "files.pythonhosted.org"
+   ],
+   "installAllow": [
+    "pypi.org",
+    "files.pythonhosted.org",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [
+    8888
+   ],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "just",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "just",
+   "description": "`just`, a command runner for project recipes (justfile)",
+   "icon": "/icons/tools/just.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "just.systems",
+    "api.github.com",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "kubectl",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "kubectl",
+   "description": "kubectl, the Kubernetes command-line client (latest stable release, checksum verified)",
+   "icon": "/icons/tools/kubernetes.svg",
+   "color": "#326CE5",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "dl.k8s.io",
+    "cdn.dl.k8s.io",
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "KUBECONFIG",
+     "label": "Kubeconfig file",
+     "help": "Path of the file with cluster access, or several separated by colons."
+    },
+    {
+     "env": "KUBE_EDITOR",
+     "label": "Editor",
+     "help": "Program that kubectl edit opens."
+    },
+    {
+     "env": "KUBECTL_EXTERNAL_DIFF",
+     "label": "Diff program",
+     "help": "Program that kubectl diff uses."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "laravel",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Laravel installer",
+   "description": "The Laravel installer (`laravel new`), installed with Composer (needs `composer`)",
+   "icon": "/icons/tools/laravel.svg",
+   "color": "#FF2D20",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "composer"
+   ],
+   "allow": [
+    "repo.packagist.org",
+    "packagist.org",
+    "api.github.com",
+    "codeload.github.com",
+    "github.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "packages.sury.org",
+    "repo.packagist.org",
+    "packagist.org",
+    "api.github.com",
+    "codeload.github.com",
+    "github.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "lazarus",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Lazarus",
+   "description": "Lazarus build tools for Free Pascal projects: `lazbuild` and the component library, to build Lazarus projects without the IDE window",
+   "icon": "/icons/tools/lazarus.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "pascal"
+   ],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": true,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "mailpit",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Mailpit",
+   "description": "Mailpit, which catches outgoing mail: SMTP on 127.0.0.1:1025, web UI on port 8025; started at every boot",
+   "icon": "/icons/tools/mail-check.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "raw.githubusercontent.com",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [
+    8025
+   ],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "MP_MAX_MESSAGES",
+     "label": "Messages kept",
+     "help": "How many messages are kept; the oldest are deleted."
+    },
+    {
+     "env": "MP_DATABASE",
+     "label": "Database file",
+     "help": "Store messages in this file so that they survive a restart."
+    },
+    {
+     "env": "MP_SMTP_AUTH_ACCEPT_ANY",
+     "label": "Accept any login",
+     "help": "Accept any SMTP user name and password."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "mariadb",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "MariaDB",
+   "description": "MariaDB server and the `mariadb`/`mysql` clients (Debian ships MariaDB, not MySQL), started at every boot and listening on localhost only; the user and database `dev` exist, without a password (local socket)",
+   "icon": "/icons/tools/mariadb.svg",
+   "color": "#003545",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "netlify",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Netlify CLI",
+   "description": "`netlify` for deploying to Netlify (installs Node.js); set a `netlify` secret on NETLIFY_AUTH_TOKEN to log in",
+   "icon": "/icons/tools/netlify.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "api.netlify.com"
+   ],
+   "installAllow": [
+    "registry.npmjs.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "NETLIFY_SITE_ID",
+     "label": "Site ID",
+     "help": "Site that the CLI works on, without running netlify link."
+    },
+    {
+     "env": "DEBUG",
+     "label": "Debug output",
+     "help": "Print full debug output."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Netlify access token",
+     "help": "A personal access token.",
+     "hosts": [
+      "api.netlify.com"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "opentofu",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "OpenTofu",
+   "description": "OpenTofu (`tofu`) from the OpenTofu project's apt repository",
+   "icon": "/icons/tools/opentofu.svg",
+   "color": "#FFDA18",
+   "ink": "#0b0f15",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "registry.opentofu.org",
+    "github.com",
+    "release-assets.githubusercontent.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "get.opentofu.org",
+    "packages.opentofu.org",
+    "d3fo0g5hm7lbuv.cloudfront.net"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "TF_LOG",
+     "label": "Log level",
+     "help": "How much the log shows."
+    },
+    {
+     "env": "TF_LOG_PATH",
+     "label": "Log file",
+     "help": "File that the log is written to."
+    },
+    {
+     "env": "TF_INPUT",
+     "label": "No prompts",
+     "help": "Never ask for input."
+    },
+    {
+     "env": "TF_WORKSPACE",
+     "label": "Workspace",
+     "help": "Workspace to use."
+    },
+    {
+     "env": "TF_PLUGIN_CACHE_DIR",
+     "label": "Provider cache",
+     "help": "Folder where downloaded providers are shared."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "phpmyadmin",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "phpMyAdmin",
+   "description": "phpMyAdmin for the local MariaDB, served with PHP's built-in web server on port 8081 and started at every boot; signed in as the MariaDB user `dev` without a password (needs `php` and `mariadb`)",
+   "icon": "/icons/tools/phpmyadmin.svg",
+   "color": "#6C78AF",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "php",
+    "mariadb"
+   ],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "packages.sury.org",
+    "www.phpmyadmin.net",
+    "files.phpmyadmin.net"
+   ],
+   "ports": [
+    8081
+   ],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "playwright",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Playwright",
+   "description": "Playwright (`playwright`) with headless Chromium and its system libraries, for browser tests",
+   "icon": "/icons/tools/playwright.svg",
+   "color": "#2EAD33",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "registry.npmjs.org",
+    "cdn.playwright.dev",
+    "playwright.download.prss.microsoft.com",
+    "playwright.azureedge.net",
+    "storage.googleapis.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "DEBUG",
+     "label": "Debug logs",
+     "help": "Playwright logs to turn on."
+    },
+    {
+     "env": "PWDEBUG",
+     "label": "Inspector",
+     "help": "Open the Playwright Inspector and run tests headed."
+    },
+    {
+     "env": "PLAYWRIGHT_HTML_OPEN",
+     "label": "Open HTML report",
+     "help": "When the HTML report opens after a test run."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "pnpm",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "pnpm",
+   "description": "pnpm, the fast disk-efficient package manager for Node.js",
+   "icon": "/icons/tools/pnpm.svg",
+   "color": "#F69220",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "registry.npmjs.org"
+   ],
+   "installAllow": [
+    "registry.npmjs.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "poetry",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Poetry",
+   "description": "Poetry (`poetry`), dependency management and packaging for Python (needs `python`)",
+   "icon": "/icons/tools/poetry.svg",
+   "color": "#60A5FA",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "python"
+   ],
+   "allow": [
+    "pypi.org",
+    "files.pythonhosted.org"
+   ],
+   "installAllow": [
+    "install.python-poetry.org",
+    "pypi.org",
+    "files.pythonhosted.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "POETRY_VIRTUALENVS_IN_PROJECT",
+     "label": "Virtualenv in project",
+     "help": "Create the virtualenv in a .venv folder of the project."
+    },
+    {
+     "env": "POETRY_VIRTUALENVS_CREATE",
+     "label": "Create virtualenvs",
+     "help": "Whether Poetry makes a virtualenv when none is active."
+    },
+    {
+     "env": "POETRY_INSTALLER_PARALLEL",
+     "label": "Parallel install",
+     "help": "Install packages in parallel."
+    },
+    {
+     "env": "POETRY_INSTALLER_MAX_WORKERS",
+     "label": "Install workers",
+     "help": "Most packages installed at once."
+    },
+    {
+     "env": "POETRY_REQUESTS_MAX_RETRIES",
+     "label": "Download retries",
+     "help": "How often a failed download is tried again."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "postgres",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "PostgreSQL",
+   "description": "PostgreSQL server and `psql`, started at every boot and listening on localhost only; the role and database `dev` exist, without a password (local socket and 127.0.0.1)",
+   "icon": "/icons/tools/postgresql.svg",
+   "color": "#4169E1",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "PGHOST",
+     "label": "Host",
+     "help": "Server that psql connects to."
+    },
+    {
+     "env": "PGPORT",
+     "label": "Port",
+     "help": "Port that psql connects to."
+    },
+    {
+     "env": "PGUSER",
+     "label": "User",
+     "help": "Role that psql connects as."
+    },
+    {
+     "env": "PGDATABASE",
+     "label": "Database",
+     "help": "Database that psql opens."
+    },
+    {
+     "env": "PGSSLMODE",
+     "label": "SSL mode",
+     "help": "Whether psql uses an encrypted connection."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "prettier",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Prettier",
+   "description": "Prettier (`prettier`), the code formatter, as a global npm package (needs `node`)",
+   "icon": "/icons/tools/prettier.svg",
+   "color": "#F7B93E",
+   "ink": "#0b0f15",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "registry.npmjs.org"
+   ],
+   "installAllow": [
+    "registry.npmjs.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "rails",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Ruby on Rails",
+   "description": "Ruby on Rails (`rails`), installed as a gem (needs `ruby`)",
+   "icon": "/icons/tools/rubyonrails.svg",
+   "color": "#D30001",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "ruby"
+   ],
+   "allow": [
+    "rubygems.org",
+    "index.rubygems.org",
+    "*.rubygems.org"
+   ],
+   "installAllow": [
+    "@packages",
+    "rubygems.org",
+    "index.rubygems.org",
+    "*.rubygems.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "RAILS_ENV",
+     "label": "Environment",
+     "help": "Which environment Rails runs in."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "redis",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Redis",
+   "description": "Redis server and `redis-cli`, started at every boot and listening on localhost only (127.0.0.1:6379, no password)",
+   "icon": "/icons/tools/redis.svg",
+   "color": "#FF4438",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "ripgrep",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "ripgrep",
+   "description": "Fast recursive search (`rg`)",
+   "icon": "/icons/tools/ripgrep.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "ruff",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Ruff",
+   "description": "Ruff (`ruff`), a fast Python linter and formatter",
+   "icon": "/icons/tools/ruff.svg",
+   "color": "#D7FF64",
+   "ink": "#0b0f15",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages",
+    "astral.sh",
+    "*.astral.sh",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "RUFF_OUTPUT_FORMAT",
+     "label": "Output format",
+     "help": "How ruff check prints its findings."
+    },
+    {
+     "env": "RUFF_NO_CACHE",
+     "label": "No cache",
+     "help": "Do not read the cache."
+    },
+    {
+     "env": "RUFF_CACHE_DIR",
+     "label": "Cache folder",
+     "help": "Where ruff keeps its cache."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "sentry-cli",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Sentry CLI",
+   "description": "`sentry-cli` for releases and source maps; set a `sentry` secret on SENTRY_AUTH_TOKEN to log in",
+   "icon": "/icons/tools/sentry.svg",
+   "color": "#362D59",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "sentry.io"
+   ],
+   "installAllow": [
+    "@packages",
+    "sentry.io",
+    "downloads.sentry-cdn.com",
+    "release-registry.services.sentry.io",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "SENTRY_ORG",
+     "label": "Organization",
+     "help": "Organization slug that commands use."
+    },
+    {
+     "env": "SENTRY_PROJECT",
+     "label": "Project",
+     "help": "Project slug that commands use."
+    },
+    {
+     "env": "SENTRY_URL",
+     "label": "Sentry URL",
+     "help": "Address of the Sentry server, for a self-hosted one."
+    },
+    {
+     "env": "SENTRY_LOG_LEVEL",
+     "label": "Log level",
+     "help": "How much the CLI logs."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Sentry auth token",
+     "help": "An organization token (fixed permissions, meant for CI and sentry-cli) or a personal token, created on sentry.io.",
+     "hosts": [
+      "sentry.io"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "shellcheck",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "ShellCheck",
+   "description": "Static analysis for shell scripts (`shellcheck`)",
+   "icon": "/icons/tools/shellcheck.svg",
+   "color": "#5E5CE6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "sqlite",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "SQLite",
+   "description": "The `sqlite3` command-line shell from Debian",
+   "icon": "/icons/tools/sqlite.svg",
+   "color": "#003B57",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "stripe",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Stripe CLI",
+   "description": "`stripe` for working with the Stripe API and webhooks; log in with `stripe login` or pass `--api-key`",
+   "icon": "/icons/tools/stripe.svg",
+   "color": "#635BFF",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "api.stripe.com"
+   ],
+   "installAllow": [
+    "@packages",
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "STRIPE_CLI_TELEMETRY_OPTOUT",
+     "label": "No usage data",
+     "help": "Do not send usage data to Stripe."
+    }
+   ],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "symfony-cli",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Symfony CLI",
+   "description": "The Symfony CLI (`symfony`) for creating and serving Symfony projects (needs `php`)",
+   "icon": "/icons/tools/symfony.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "php"
+   ],
+   "allow": [
+    "repo.packagist.org",
+    "packagist.org",
+    "api.github.com",
+    "codeload.github.com",
+    "github.com"
+   ],
+   "installAllow": [
+    "github.com",
+    "release-assets.githubusercontent.com",
+    "objects.githubusercontent.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "terraform",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Terraform",
+   "description": "Terraform from HashiCorp's apt repository",
+   "icon": "/icons/tools/terraform.svg",
+   "color": "#844FBA",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "registry.terraform.io",
+    "releases.hashicorp.com",
+    "app.terraform.io"
+   ],
+   "installAllow": [
+    "@packages",
+    "apt.releases.hashicorp.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "TF_LOG",
+     "label": "Log level",
+     "help": "How much the log shows."
+    },
+    {
+     "env": "TF_LOG_PATH",
+     "label": "Log file",
+     "help": "File that the log is written to."
+    },
+    {
+     "env": "TF_INPUT",
+     "label": "No prompts",
+     "help": "Never ask for input."
+    },
+    {
+     "env": "TF_WORKSPACE",
+     "label": "Workspace",
+     "help": "Workspace to use."
+    },
+    {
+     "env": "TF_PLUGIN_CACHE_DIR",
+     "label": "Provider cache",
+     "help": "Folder where downloaded providers are shared."
+    },
+    {
+     "env": "CHECKPOINT_DISABLE",
+     "label": "No update check",
+     "help": "Do not check for new versions."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "HCP Terraform token",
+     "help": "A user or team API token for HCP Terraform.",
+     "hosts": [
+      "app.terraform.io"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "tmux",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "tmux",
+   "description": "Terminal multiplexer (`tmux`)",
+   "icon": "/icons/tools/tmux.svg",
+   "color": "#1BB91F",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [],
+   "installAllow": [
+    "@packages"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "typescript",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "TypeScript",
+   "description": "The TypeScript compiler (`tsc`, `tsserver`) as a global npm package (needs `node`)",
+   "icon": "/icons/tools/typescript.svg",
+   "color": "#3178C6",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "registry.npmjs.org"
+   ],
+   "installAllow": [
+    "registry.npmjs.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "vercel",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Vercel CLI",
+   "description": "`vercel` for deploying to Vercel (installs Node.js); set a `vercel` secret on VERCEL_TOKEN to log in",
+   "icon": "/icons/tools/vercel.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "api.vercel.com"
+   ],
+   "installAllow": [
+    "registry.npmjs.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "VERCEL_ORG_ID",
+     "label": "Team ID",
+     "help": "Team that the project belongs to, without running vercel link."
+    },
+    {
+     "env": "VERCEL_PROJECT_ID",
+     "label": "Project ID",
+     "help": "Project that the CLI works on, without running vercel link."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Vercel access token",
+     "help": "An access token for your account or team.",
+     "hosts": [
+      "api.vercel.com"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "vscode-remote",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": true,
+   "name": "VS Code Remote",
+   "description": "Opens the network for VS Code's Remote-SSH server and its extensions",
+   "icon": "/icons/tools/vscode.svg",
+   "color": "#007ACC",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [],
+   "allow": [
+    "update.code.visualstudio.com",
+    "vscode.download.prss.microsoft.com",
+    "main.vscode-cdn.net",
+    "marketplace.visualstudio.com",
+    "*.gallery.vsassets.io",
+    "*.gallerycdn.vsassets.io"
+   ],
+   "installAllow": [],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  },
+  {
+   "id": "wrangler",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Wrangler",
+   "description": "`wrangler`, the Cloudflare Workers CLI (installs Node.js); set a `cloudflare` secret on CLOUDFLARE_API_TOKEN to log in",
+   "icon": "/icons/tools/cloudflareworkers.svg",
+   "color": "#F38020",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "api.cloudflare.com"
+   ],
+   "installAllow": [
+    "registry.npmjs.org"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [
+    {
+     "env": "CLOUDFLARE_ACCOUNT_ID",
+     "label": "Account ID",
+     "help": "Cloudflare account that Wrangler works on."
+    },
+    {
+     "env": "WRANGLER_LOG",
+     "label": "Log level",
+     "help": "How much Wrangler logs."
+    },
+    {
+     "env": "WRANGLER_SEND_METRICS",
+     "label": "Usage data",
+     "help": "Whether usage data is sent to Cloudflare."
+    },
+    {
+     "env": "WRANGLER_LOG_PATH",
+     "label": "Debug log folder",
+     "help": "File or folder that receives debug logs."
+    }
+   ],
+   "credentials": [
+    {
+     "label": "Cloudflare API token",
+     "help": "An API token with the permissions Wrangler needs.",
+     "hosts": [
+      "api.cloudflare.com"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "id": "yarn",
+   "repo": "tools",
+   "kind": "tool",
+   "ide": false,
+   "name": "Yarn",
+   "description": "Yarn (modern, through Corepack) for Node.js",
+   "icon": "/icons/tools/yarn.svg",
+   "color": "#2C8EBB",
+   "ink": "#ffffff",
+   "versions": [],
+   "os": [
+    "debian",
+    "ubuntu"
+   ],
+   "requires": [
+    "node"
+   ],
+   "allow": [
+    "registry.npmjs.org",
+    "repo.yarnpkg.com"
+   ],
+   "installAllow": [
+    "registry.npmjs.org",
+    "repo.yarnpkg.com"
+   ],
+   "ports": [],
+   "command": null,
+   "removable": false,
+   "settings": [],
+   "credentials": [],
+   "actions": []
+  }
+ ],
+ "systems": [
+  {
+   "id": "alma-10",
+   "name": "AlmaLinux 10",
+   "group": "alma",
+   "version": "10",
+   "family": "rpm",
+   "description": "Free rebuild of Red Hat Enterprise Linux (RPM, dnf). libkrun backend only.",
+   "icon": "/icons/os/almalinux.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "packageHosts": [
+    "repo.almalinux.org"
+   ]
+  },
+  {
+   "id": "alma-8",
+   "name": "AlmaLinux 8",
+   "group": "alma",
+   "version": "8",
+   "family": "rpm",
+   "description": "Free rebuild of Red Hat Enterprise Linux (RPM, dnf). libkrun backend only.",
+   "icon": "/icons/os/almalinux.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "packageHosts": [
+    "repo.almalinux.org"
+   ]
+  },
+  {
+   "id": "alma",
+   "name": "AlmaLinux 9",
+   "group": "alma",
+   "version": "9",
+   "family": "rpm",
+   "description": "Free rebuild of Red Hat Enterprise Linux (RPM, dnf). libkrun backend only.",
+   "icon": "/icons/os/almalinux.svg",
+   "color": "#000000",
+   "ink": "#ffffff",
+   "packageHosts": [
+    "repo.almalinux.org"
+   ]
+  },
+  {
+   "id": "alpine",
+   "name": "Alpine 3",
+   "group": "alpine",
+   "version": "3",
+   "family": "alpine",
+   "description": "Small and quick to build. No official recipes yet; libkrun backend only.",
+   "icon": "/icons/os/alpinelinux.svg",
+   "color": "#0D597F",
+   "ink": "#ffffff",
+   "packageHosts": [
+    "dl-cdn.alpinelinux.org"
+   ]
+  },
+  {
+   "id": "arch",
+   "name": "Arch Linux",
+   "group": "arch",
+   "version": "rolling",
+   "family": "arch",
+   "description": "Rolling release, always the newest packages. x86_64 only (Arch has no official ARM64 image); libkrun backend only.",
+   "icon": "/icons/os/archlinux.svg",
+   "color": "#1793D1",
+   "ink": "#ffffff",
+   "packageHosts": [
+    "geo.mirror.pkgbuild.com"
+   ]
+  },
+  {
+   "id": "debian-12",
+   "name": "Debian 12",
+   "group": "debian",
+   "version": "12",
+   "family": "debian",
+   "description": "Debian oldstable (bookworm). Brings its own kernel, so it also runs on the qemu backend.",
+   "icon": "/icons/os/debian.svg",
+   "color": "#A81D33",
+   "ink": "#ffffff",
+   "packageHosts": [
+    "deb.debian.org",
+    "security.debian.org"
+   ]
+  },
+  {
+   "id": "debian",
+   "name": "Debian 13",
+   "group": "debian",
+   "version": "13",
+   "family": "debian",
+   "description": "Debian stable. The default; every official recipe is written for it.",
+   "icon": "/icons/os/debian.svg",
+   "color": "#A81D33",
+   "ink": "#ffffff",
+   "packageHosts": [
+    "deb.debian.org",
+    "security.debian.org"
+   ]
+  },
+  {
+   "id": "ubuntu-22-04",
+   "name": "Ubuntu 22.04",
+   "group": "ubuntu",
+   "version": "22.04",
+   "family": "ubuntu",
+   "description": "Ubuntu 22.04 LTS. Agents, Node.js, Python, Go, Rust and most tools work; libkrun backend only.",
+   "icon": "/icons/os/ubuntu.svg",
+   "color": "#E95420",
+   "ink": "#ffffff",
+   "packageHosts": [
+    "archive.ubuntu.com",
+    "security.ubuntu.com"
+   ]
+  },
+  {
+   "id": "ubuntu-26-04",
+   "name": "Ubuntu 26.04 LTS",
+   "group": "ubuntu",
+   "version": "26.04",
+   "family": "ubuntu",
+   "description": "Ubuntu 26.04 LTS. Agents, Node.js, Python, Go, Rust and most tools work; libkrun backend only.",
+   "icon": "/icons/os/ubuntu.svg",
+   "color": "#E95420",
+   "ink": "#ffffff",
+   "packageHosts": [
+    "archive.ubuntu.com",
+    "security.ubuntu.com"
+   ]
+  },
+  {
+   "id": "ubuntu",
+   "name": "Ubuntu 24.04",
+   "group": "ubuntu",
+   "version": "24.04",
+   "family": "ubuntu",
+   "description": "Ubuntu LTS. Agents, Node.js, Python, Go, Rust and most tools work; libkrun backend only.",
+   "icon": "/icons/os/ubuntu.svg",
+   "color": "#E95420",
+   "ink": "#ffffff",
+   "packageHosts": [
+    "archive.ubuntu.com",
+    "security.ubuntu.com"
+   ]
+  }
+ ]
+}

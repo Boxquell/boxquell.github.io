@@ -21,6 +21,14 @@ export function Footer() {
           <a href={`${SITE.repo}/issues`}>Report a problem</a>
         </div>
         <div>
+          <h4>Site</h4>
+          <Link to="/catalogue">Catalogue</Link>
+          <Link to="/catalogue/agents">Agents</Link>
+          <Link to="/catalogue/languages">Languages</Link>
+          <Link to="/catalogue/tools">Tools</Link>
+          <Link to="/faq">Questions and answers</Link>
+        </div>
+        <div>
           <h4>Legal</h4>
           <Link to="/impressum">Impressum</Link>
           <Link to="/datenschutz">Datenschutz</Link>
