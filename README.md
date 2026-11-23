@@ -19,7 +19,11 @@ npm run catalogue   # renews the catalogue data from the recipe repositories nex
 - `scripts/prerender.mjs`: renders each page on the build machine and writes `sitemap.xml`, `robots.txt` and `llms.txt` (a summary of the site for AI assistants).
 - `public/shots`: screenshots of the app, converted from `docs/screenshots` of the main repository.
 
-## Serving it
+## Publishing
+
+A push to `main` builds the site and publishes it on GitHub Pages at <https://boxquell.github.io> (`.github/workflows/pages.yml`). That build sets `VITE_SITE_HOST=github`, so the privacy policy names GitHub as the host; without it the policy describes the own server below.
+
+## Serving it yourself
 
 Every page is a file of its own (`/faq` is `faq.html`), and the browser takes over from there without loading pages anew; the `Caddyfile` maps the addresses and answers unknown ones with `404.html`. `docker buildx build -t boxquell-www .` builds an image that serves the site on port 80, meant to sit behind a proxy that handles TLS.
 

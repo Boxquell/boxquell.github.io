@@ -112,21 +112,41 @@ export function Privacy({ lang }: { lang: Lang }) {
       <Page title="Datenschutzerklärung" updated="Stand: November 2026" other={{ to: "/en/privacy", label: "English version" }}>
         <h2>Kurz gesagt</h2>
         <p>
-          Diese Website setzt keine Cookies, nutzt keine Analyse- oder Tracking-Werkzeuge und lädt keine Inhalte von Dritten. Schriften, Bilder und Skripte werden vom eigenen Server ausgeliefert. Erst wenn Sie einen Link zu GitHub
+          Diese Website setzt keine Cookies, nutzt keine Analyse- oder Tracking-Werkzeuge und lädt keine Inhalte von Dritten. Schriften, Bilder und Skripte kommen von derselben Adresse wie die Seite selbst. Erst wenn Sie einen Link zu GitHub
           anklicken, verlassen Sie diese Website.
         </p>
         <h2>Verantwortlicher</h2>
         <Address lang="de" />
         <h2>Hosting und Server-Logfiles</h2>
-        <p>
-          Diese Website ({SITE.domain}) wird bei der Hetzner Online GmbH (Industriestr. 25, 91710 Gunzenhausen) in einem Rechenzentrum in Helsinki, Finnland, also innerhalb der Europäischen Union, gehostet. Mit dem Anbieter besteht ein
-          Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.
-        </p>
-        <p>
-          Beim Aufruf verarbeitet der Server automatisch technische Zugriffsdaten: IP-Adresse, Datum und Uhrzeit, abgerufene Ressource, HTTP-Statuscode, Referrer sowie Browser- und Betriebssystem-Kennung. Das ist nötig, um die Seite
-          auszuliefern und den Betrieb sicher und stabil zu halten (etwa zur Abwehr von Angriffen). Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden nicht mit anderen Daten zusammengeführt und gelöscht, sobald sie für
-          diese Zwecke nicht mehr erforderlich sind.
-        </p>
+        {SITE.host === "github" ? (
+          <>
+            <p>
+              Diese Website ({SITE.domain}) wird über GitHub Pages ausgeliefert, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (in der EU: GitHub B.V., Prins Bernhardplein 200, 1097 JB
+              Amsterdam, Niederlande). Einen eigenen Server betreibe ich für diese Website nicht.
+            </p>
+            <p>
+              Beim Aufruf verarbeitet GitHub technische Zugriffsdaten, insbesondere Ihre IP-Adresse, Datum und Uhrzeit, die abgerufene Seite sowie Browser- und Betriebssystem-Kennung, um die Seite auszuliefern und den Dienst sicher
+              zu betreiben. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; mein berechtigtes Interesse ist die zuverlässige Bereitstellung dieser Website. Ich selbst habe keinen Zugriff auf diese Zugriffsdaten und werte sie nicht
+              aus. Dabei können Daten in die USA übermittelt werden; GitHub stützt sich hierfür nach eigenen Angaben auf das EU-US Data Privacy Framework sowie Standardvertragsklauseln. Näheres steht in der{" "}
+              <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">
+                Datenschutzerklärung von GitHub
+              </a>
+              .
+            </p>
+          </>
+        ) : (
+          <>
+            <p>
+              Diese Website ({SITE.domain}) wird bei der Hetzner Online GmbH (Industriestr. 25, 91710 Gunzenhausen) in einem Rechenzentrum in Helsinki, Finnland, also innerhalb der Europäischen Union, gehostet. Mit dem Anbieter besteht ein
+              Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.
+            </p>
+            <p>
+              Beim Aufruf verarbeitet der Server automatisch technische Zugriffsdaten: IP-Adresse, Datum und Uhrzeit, abgerufene Ressource, HTTP-Statuscode, Referrer sowie Browser- und Betriebssystem-Kennung. Das ist nötig, um die Seite
+              auszuliefern und den Betrieb sicher und stabil zu halten (etwa zur Abwehr von Angriffen). Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden nicht mit anderen Daten zusammengeführt und gelöscht, sobald sie für
+              diese Zwecke nicht mehr erforderlich sind.
+            </p>
+          </>
+        )}
         <h2>Keine Cookies, keine Reichweitenmessung</h2>
         <p>
           Es werden weder Cookies gesetzt noch Daten im lokalen Speicher Ihres Browsers abgelegt. Es findet keine Reichweitenmessung statt. Die Erkennung Ihres Betriebssystems im Bereich „Install" (um den passenden Befehl
@@ -168,20 +188,40 @@ export function Privacy({ lang }: { lang: Lang }) {
     <Page title="Privacy policy" updated="Last updated: November 2026" other={{ to: "/datenschutz", label: "Deutsche Fassung" }}>
       <h2>In short</h2>
       <p>
-        This website sets no cookies, uses no analytics or tracking tools and loads no content from third parties. Fonts, images and scripts are delivered from its own server. Only when you click a link to GitHub do you leave this
+        This website sets no cookies, uses no analytics or tracking tools and loads no content from third parties. Fonts, images and scripts come from the same address as the page itself. Only when you click a link to GitHub do you leave this
         website.
       </p>
       <h2>Controller</h2>
       <Address lang="en" />
       <h2>Hosting and server log files</h2>
-      <p>
-        This website ({SITE.domain}) is hosted by Hetzner Online GmbH (Industriestr. 25, 91710 Gunzenhausen, Germany) in a data centre in Helsinki, Finland, inside the European Union. A data processing agreement pursuant to Art. 28 GDPR
-        is in place.
-      </p>
-      <p>
-        When you visit, the server automatically processes technical access data: IP address, date and time, requested resource, HTTP status code, referrer and browser/operating system identifier. This is necessary to deliver the site
-        and to keep it running securely and reliably (for example to fend off attacks). The legal basis is Art. 6 (1) (f) GDPR. The data is not combined with other data and is deleted once it is no longer needed for these purposes.
-      </p>
+      {SITE.host === "github" ? (
+        <>
+          <p>
+            This website ({SITE.domain}) is delivered by GitHub Pages, a service of GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (in the EU: GitHub B.V., Prins Bernhardplein 200, 1097 JB Amsterdam, The
+            Netherlands). I do not run a server of my own for this website.
+          </p>
+          <p>
+            When you visit, GitHub processes technical access data, in particular your IP address, date and time, the page requested and browser/operating system identifier, to deliver the site and to run the service securely. The
+            legal basis is Art. 6 (1) (f) GDPR; my legitimate interest is to provide this website reliably. I have no access to this access data myself and do not evaluate it. Data may be transferred to the USA; according to GitHub
+            this is based on the EU-US Data Privacy Framework and standard contractual clauses. Details are in the{" "}
+            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">
+              GitHub privacy statement
+            </a>
+            .
+          </p>
+        </>
+      ) : (
+        <>
+          <p>
+            This website ({SITE.domain}) is hosted by Hetzner Online GmbH (Industriestr. 25, 91710 Gunzenhausen, Germany) in a data centre in Helsinki, Finland, inside the European Union. A data processing agreement pursuant to Art. 28 GDPR
+            is in place.
+          </p>
+          <p>
+            When you visit, the server automatically processes technical access data: IP address, date and time, requested resource, HTTP status code, referrer and browser/operating system identifier. This is necessary to deliver the site
+            and to keep it running securely and reliably (for example to fend off attacks). The legal basis is Art. 6 (1) (f) GDPR. The data is not combined with other data and is deleted once it is no longer needed for these purposes.
+          </p>
+        </>
+      )}
       <h2>No cookies, no audience measurement</h2>
       <p>
         No cookies are set and nothing is stored in your browser's local storage. There is no audience measurement. Detecting your operating system in the "Install" section (to preselect the matching command) and copying a command to
